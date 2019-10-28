@@ -50,18 +50,18 @@
   };
 </script>
 
-  <meta name="description" content="QuestionGiven a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.">
-<meta name="keywords" content="String,Dynamic Programming">
+  <meta name="description" content="ProblemThe string &amp;quot;PAYPALISHIRING&amp;quot; is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility) P   A   H">
+<meta name="keywords" content="String">
 <meta property="og:type" content="article">
-<meta property="og:title" content="5. Longest Palindromic Substring">
-<meta property="og:url" content="https:&#x2F;&#x2F;yuange.me&#x2F;2019&#x2F;10&#x2F;27&#x2F;5-Longest-Palindromic-Substring&#x2F;index.html">
+<meta property="og:title" content="6. ZigZag Conversion">
+<meta property="og:url" content="https:&#x2F;&#x2F;yuange.me&#x2F;2019&#x2F;10&#x2F;28&#x2F;6-ZigZag-Conversion&#x2F;index.html">
 <meta property="og:site_name" content="远歌">
-<meta property="og:description" content="QuestionGiven a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.">
+<meta property="og:description" content="ProblemThe string &amp;quot;PAYPALISHIRING&amp;quot; is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility) P   A   H">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-28T10:34:55.046Z">
+<meta property="og:updated_time" content="2019-10-28T11:24:53.423Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://yuange.me/2019/10/27/5-Longest-Palindromic-Substring/">
+<link rel="canonical" href="https://yuange.me/2019/10/28/6-ZigZag-Conversion/">
 
 
 <script id="page-configurations">
@@ -75,7 +75,7 @@
   };
 </script>
 
-  <title>5. Longest Palindromic Substring | 远歌</title>
+  <title>6. ZigZag Conversion | 远歌</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150738391-1"></script>
     <script>
@@ -197,7 +197,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
-    <link itemprop="mainEntityOfPage" href="https://yuange.me/2019/10/27/5-Longest-Palindromic-Substring/">
+    <link itemprop="mainEntityOfPage" href="https://yuange.me/2019/10/28/6-ZigZag-Conversion/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/23097417?s=400&u=a3848d773a837079031fb241c8586a3fc652e179&v=4">
@@ -210,7 +210,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          5. Longest Palindromic Substring
+          6. ZigZag Conversion
         </h1>
 
         <div class="post-meta">
@@ -219,16 +219,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2019-10-27 14:57:38" itemprop="dateCreated datePublished" datetime="2019-10-27T14:57:38+08:00">2019-10-27</time>
+              <time title="Created: 2019-10-28 18:30:13 / Modified: 19:24:53" itemprop="dateCreated datePublished" datetime="2019-10-28T18:30:13+08:00">2019-10-28</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-10-28 18:34:55" itemprop="dateModified" datetime="2019-10-28T18:34:55+08:00">2019-10-28</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -252,16 +246,24 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.</p>
-<a id="more"></a>
-
+        <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>The string <code>&quot;PAYPALISHIRING&quot;</code> is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)</p>
+<pre><code>P   A   H   N
+A P L S I I G
+Y   I   R</code></pre><p>And then read line by line: <code>&quot;PAHNAPLSIIGYIR&quot;</code></p>
+<p>Write the code that will take a string and make this conversion given a number of rows:</p>
+<pre><code>string convert(string s, int numRows); </code></pre><a id="more"></a>
 <p><strong>Example 1:</strong></p>
-<pre><code>Input: &quot;babad&quot;
-Output: &quot;bab&quot;
-Note: &quot;aba&quot; is also a valid answer.</code></pre><p><strong>Example 2:</strong></p>
-<pre><code>Input: &quot;cbbd&quot;
-Output: &quot;bb&quot;</code></pre><h2 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h2><p>这道题是要求string中最长回文子序列，首先特殊情况s长度为1时，最长子序列一定是其本身，之后只需要遍历每一个元素，确定其所在的回文串即可。</p>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        <span class="function"><span class="built_in">string</span> <span class="title">longestPalindrome</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = s.size();</span><br><span class="line">        <span class="keyword">if</span> (len &lt;= <span class="number">1</span>) </span><br><span class="line">            <span class="keyword">return</span> s;</span><br><span class="line">        <span class="keyword">int</span> lpos = <span class="number">0</span>, lm = <span class="number">0</span>; # 回文起始index和回文长度</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len - <span class="number">1</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (lm &gt;= (len - i) * <span class="number">2</span>) </span><br><span class="line">                <span class="keyword">return</span> s.substr(lpos, lm); # 当前回文串长度大于剩余长度的<span class="number">2</span>倍，即为最长回文串</span><br><span class="line">            <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span> (s[i + <span class="number">1</span>] == s[i] &amp;&amp; i++ &lt; len - <span class="number">1</span>)</span><br><span class="line">                count++; # 相同字符的长度</span><br><span class="line">            <span class="keyword">int</span> end = i;</span><br><span class="line">            <span class="keyword">int</span> first = i - count; # 回文串首部</span><br><span class="line">            <span class="keyword">while</span> (first &gt;= <span class="number">0</span> &amp;&amp; end &lt; len &amp;&amp; s[first] == s[end]) &#123;</span><br><span class="line">                first--;</span><br><span class="line">                end++; # 相同字符之外的长度</span><br><span class="line">            &#125;</span><br><span class="line">            end--;</span><br><span class="line">            first++;</span><br><span class="line">            <span class="keyword">if</span> (lm &lt; end - first + <span class="number">1</span>) &#123;</span><br><span class="line">                lpos = first;</span><br><span class="line">                lm = end - first + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> s.substr(lpos, lm);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<pre><code>Input: s = &quot;PAYPALISHIRING&quot;, numRows = 3
+Output: &quot;PAHNAPLSIIGYIR&quot;</code></pre><p><strong>Example 2:</strong></p>
+<pre><code>Input: s = &quot;PAYPALISHIRING&quot;, numRows = 4
+Output: &quot;PINALSIGYAHRPI&quot;
+Explanation:
+
+P     I    N
+A   L S  I G
+Y A   H R
+P     I</code></pre><h2 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h2><p>这道题是求将一个字符串从上到下锯齿字型按列排序，再按行从左到右输出。可以看到，除了第一行和最后一行，以及最后一个Z型弯，其他行元素个数一致，元素的左右位置不影响最终输出。</p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">convert</span><span class="params">(<span class="built_in">string</span> s, <span class="keyword">int</span> numRows)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(s.size()&lt;<span class="number">2</span> || numRows == <span class="number">1</span>) </span><br><span class="line">            <span class="keyword">return</span> s;</span><br><span class="line">        <span class="keyword">int</span> cir = s.size() / (<span class="number">2</span> * numRows - <span class="number">2</span>);</span><br><span class="line">        <span class="keyword">int</span> res = s.size() % (<span class="number">2</span> * numRows - <span class="number">2</span>);</span><br><span class="line">        <span class="function"><span class="built_in">string</span> <span class="title">out</span><span class="params">(<span class="string">""</span>)</span></span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; numRows; ++i) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= cir; ++j) &#123;</span><br><span class="line">                <span class="keyword">if</span> (j &lt; cir) &#123;</span><br><span class="line">                    out += s[(<span class="number">2</span> * numRows - <span class="number">2</span>) * j + i];</span><br><span class="line">                    <span class="keyword">if</span> (i != <span class="number">0</span> &amp;&amp; <span class="number">2</span> * numRows - <span class="number">2</span> != <span class="number">2</span> * i) &#123;</span><br><span class="line">                        out += s[(<span class="number">2</span> * numRows - <span class="number">2</span>) * (j + <span class="number">1</span>) - i];</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">if</span> ((<span class="number">2</span> * numRows - <span class="number">2</span>) * j + i &lt; s.size()) &#123;</span><br><span class="line">                        out += s[(<span class="number">2</span> * numRows - <span class="number">2</span>) * j + i];</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">if</span> ((<span class="number">2</span> * numRows - <span class="number">2</span>) * (j + <span class="number">1</span>) - i &lt; s.size() &amp;&amp; i != <span class="number">0</span> &amp;&amp; <span class="number">2</span> * numRows - <span class="number">2</span> != <span class="number">2</span> * i) &#123;</span><br><span class="line">                        out += s[(<span class="number">2</span> * numRows - <span class="number">2</span>) * (j + <span class="number">1</span>) - i];</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> out;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -287,24 +289,20 @@ Output: &quot;bb&quot;</code></pre><h2 id="Analysis"><a href="#Analysis" class="
       <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/String/" rel="tag"># String</a>
-              <a href="/tags/Dynamic-Programming/" rel="tag"># Dynamic Programming</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-                <a href="/2019/10/23/4-Median-of-Two-Sorted-Arrays/" rel="next" title="4. Median of Two Sorted Arrays">
-                  <i class="fa fa-chevron-left"></i> 4. Median of Two Sorted Arrays
+                <a href="/2019/10/27/5-Longest-Palindromic-Substring/" rel="next" title="5. Longest Palindromic Substring">
+                  <i class="fa fa-chevron-left"></i> 5. Longest Palindromic Substring
                 </a>
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-                <a href="/2019/10/28/6-ZigZag-Conversion/" rel="prev" title="6. ZigZag Conversion">
-                  6. ZigZag Conversion <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
       </footer>
@@ -343,7 +341,7 @@ Output: &quot;bb&quot;</code></pre><h2 id="Analysis"><a href="#Analysis" class="
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Question"><span class="nav-number">1.</span> <span class="nav-text">Question</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Analysis"><span class="nav-number">2.</span> <span class="nav-text">Analysis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Code"><span class="nav-number">3.</span> <span class="nav-text">Code</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem"><span class="nav-number">1.</span> <span class="nav-text">Problem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Analysis"><span class="nav-number">2.</span> <span class="nav-text">Analysis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Code"><span class="nav-number">3.</span> <span class="nav-text">Code</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
