@@ -60,7 +60,7 @@
 <meta property="og:site_name" content="远歌">
 <meta property="og:description" content="QuestionGiven a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-28T10:34:55.046Z">
+<meta property="og:updated_time" content="2019-10-29T10:40:49.740Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://yuange.me/hgposts/2fda2b11/">
@@ -235,7 +235,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-10-28 18:34:55" itemprop="dateModified" datetime="2019-10-28T18:34:55+08:00">2019-10-28</time>
+                <time title="Modified: 2019-10-29 18:40:49" itemprop="dateModified" datetime="2019-10-29T18:40:49+08:00">2019-10-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -250,6 +250,20 @@
             </span>
 
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/hgposts/2fda2b11/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="hgposts/2fda2b11/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -327,6 +341,13 @@ Output: &quot;bb&quot;</code></pre><h2 id="Analysis"><a href="#Analysis" class="
 
           </div>
           
+    
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
 
         </div>
           
@@ -495,6 +516,58 @@ Output: &quot;bb&quot;</code></pre><h2 id="Analysis"><a href="#Analysis" class="
   
 
   
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://远歌.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  function loadComments() {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: {page: {
+            url: "https://yuange.me/hgposts/2fda2b11/",
+            identifier: "hgposts/2fda2b11/",
+            title: "5. Longest Palindromic Substring"
+          }
+        }
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://远歌.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  }
+    (function() {
+      var offsetTop = document.getElementById('comments').offsetTop - window.innerHeight;
+      if (offsetTop <= 0) {
+        // load directly when there's no a scrollbar
+        window.addEventListener('load', loadComments, false);
+      } else {
+        var disqus_scroll = () => {
+          // offsetTop may changes because of manually resizing browser window or lazy loading images.
+          var offsetTop = document.getElementById('comments').offsetTop - window.innerHeight;
+          var scrollTop = window.scrollY;
+
+          // pre-load comments a bit? (margin or anything else)
+          if (offsetTop - scrollTop < 60) {
+            window.removeEventListener('scroll', disqus_scroll);
+            loadComments();
+          }
+        };
+        window.addEventListener('scroll', disqus_scroll);
+      }
+    })();
+  
+</script>
 
 </body>
 </html>
