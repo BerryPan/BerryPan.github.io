@@ -52,15 +52,15 @@
   };
 </script>
 
-  <meta name="description" content="Problem">
+  <meta name="description" content="ProblemGiven an input string (s) and a pattern (p), implement regular expression matching with support for ‘.’ and ‘*’. &amp;apos;.&amp;apos; Matches any single character. &amp;apos;*&amp;apos; Matches zero or more o">
 <meta name="keywords" content="String,Dynamic Programming,Backtracking">
 <meta property="og:type" content="article">
 <meta property="og:title" content="10. Regular Expression Matching">
 <meta property="og:url" content="https:&#x2F;&#x2F;yuange.me&#x2F;2019&#x2F;10&#x2F;28&#x2F;10-Regular-Expression-Matching&#x2F;index.html">
 <meta property="og:site_name" content="远歌">
-<meta property="og:description" content="Problem">
+<meta property="og:description" content="ProblemGiven an input string (s) and a pattern (p), implement regular expression matching with support for ‘.’ and ‘*’. &amp;apos;.&amp;apos; Matches any single character. &amp;apos;*&amp;apos; Matches zero or more o">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-28T12:58:00.635Z">
+<meta property="og:updated_time" content="2019-10-29T07:03:31.100Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://yuange.me/2019/10/28/10-Regular-Expression-Matching/">
@@ -226,10 +226,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2019-10-28 20:52:49 / Modified: 20:58:00" itemprop="dateCreated datePublished" datetime="2019-10-28T20:52:49+08:00">2019-10-28</time>
+              <time title="Created: 2019-10-28 20:52:49" itemprop="dateCreated datePublished" datetime="2019-10-28T20:52:49+08:00">2019-10-28</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-10-29 15:03:31" itemprop="dateModified" datetime="2019-10-29T15:03:31+08:00">2019-10-29</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -253,11 +259,42 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><a id="more"></a>
+        <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>Given an input string (s) and a pattern (p), implement regular expression matching with support for ‘.’ and ‘*’.</p>
+<pre><code>&apos;.&apos; Matches any single character.
+&apos;*&apos; Matches zero or more of the preceding element.</code></pre><p>The matching should cover the entire input string (not partial).</p>
+<a id="more"></a>
 
 <p><strong>Note:</strong></p>
+<ul>
+<li><code>s</code> could be empty and contains only lowercase letters <code>a-z</code>.</li>
+<li><code>p</code> could be empty and contains only lowercase letters <code>a-z</code>, and characters like <code>.</code> or <code>*</code>.</li>
+</ul>
 <p><strong>Example 1:</strong></p>
-<h2 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h2><h2 id="code"><a href="#code" class="headerlink" title="code"></a>code</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code>Input:
+s = &quot;aa&quot;
+p = &quot;a&quot;
+Output: false
+Explanation: &quot;a&quot; does not match the entire string &quot;aa&quot;.</code></pre><p><strong>Example 2:</strong></p>
+<pre><code>Input:
+s = &quot;aa&quot;
+p = &quot;a*&quot;
+Output: true
+Explanation: &apos;*&apos; means zero or more of the preceding element, &apos;a&apos;. Therefore, by repeating &apos;a&apos; once, it becomes &quot;aa&quot;.</code></pre><p><strong>Example 3:</strong></p>
+<pre><code>Input:
+s = &quot;ab&quot;
+p = &quot;.*&quot;
+Output: true
+Explanation: &quot;.*&quot; means &quot;zero or more (*) of any character (.)&quot;.</code></pre><p><strong>Example 4:</strong></p>
+<pre><code>Input:
+s = &quot;aab&quot;
+p = &quot;c*a*b&quot;
+Output: true
+Explanation: c can be repeated 0 times, a can be repeated 1 time. Therefore, it matches &quot;aab&quot;.</code></pre><p><strong>Example 5:</strong></p>
+<pre><code>Input:
+s = &quot;mississippi&quot;
+p = &quot;mis*is*p*.&quot;
+Output: false</code></pre><h2 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h2><p>这道题是匹配正则表达式中的<code>*</code>和<code>.</code>。其中<code>*</code>是0或多个前面的字符，<code>.</code>是任意字符</p>
+<h2 id="code"><a href="#code" class="headerlink" title="code"></a>code</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -300,6 +337,9 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
+                <a href="/2019/10/29/hexo-%E5%8D%9A%E5%AE%A2-bug/" rel="prev" title="hexo 博客 bug">
+                  hexo 博客 bug <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
       </footer>
@@ -354,20 +394,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
