@@ -52,14 +52,18 @@
   };
 </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="远歌">
-<meta property="og:url" content="https:&#x2F;&#x2F;yuange.me&#x2F;tags&#x2F;debug&#x2F;index.html">
+  <meta name="description" content="建站中遇到的bug和解决方案">
+<meta name="keywords" content="hexo,debug">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo 博客 bug">
+<meta property="og:url" content="https:&#x2F;&#x2F;yuange.me&#x2F;hgposts&#x2F;84b0cd74&#x2F;index.html">
 <meta property="og:site_name" content="远歌">
+<meta property="og:description" content="建站中遇到的bug和解决方案">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-10-29T09:20:57.496Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://yuange.me/tags/debug/">
+<link rel="canonical" href="https://yuange.me/hgposts/84b0cd74/">
 
 
 <script id="page-configurations">
@@ -67,13 +71,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false,
+    isPost: true,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>Tag: debug | 远歌</title>
+  <title>hexo 博客 bug | 远歌</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150738391-1"></script>
     <script>
@@ -196,50 +200,117 @@
           <div class="content">
             
 
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">debug
-          <small>Tag</small>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="https://yuange.me/hgposts/84b0cd74/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/23097417?s=400&u=a3848d773a837079031fb241c8586a3fc652e179&v=4">
+      <meta itemprop="name" content="远歌">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="远歌">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          hexo 博客 bug
         </h2>
-      </div>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2019-10-29 15:08:30 / Modified: 17:20:57" itemprop="dateCreated datePublished" datetime="2019-10-29T15:08:30+08:00">2019-10-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">hexo</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <h2 class="collection-header">2019</h2>
+        <p>建站中遇到的bug和解决方案</p>
+<a id="more"></a>
+
+<h2 id="百度网站推送"><a href="#百度网站推送" class="headerlink" title="百度网站推送"></a>百度网站推送</h2><h3 id="报错"><a href="#报错" class="headerlink" title="报错"></a>报错</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">INFO  Start processing</span><br><span class="line">FATAL Something&apos;s wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.html</span><br><span class="line">TypeError: Cannot read property &apos;count&apos; of undefined</span><br><span class="line">    at Hexo.module.exports (C:\Users\pjm-9\OneDrive\文档\blog\node_modules\hexo-baidu-url-submit\lib\generator.js:4:41)</span><br><span class="line">    at Hexo.&lt;anonymous&gt; (C:\Users\pjm-9\OneDrive\文档\blog\node_modules\bluebird\js\release\method.js:15:34)</span><br><span class="line">    at Promise.map.key (C:\Users\pjm-9\OneDrive\文档\blog\node_modules\hexo\lib\hexo\index.js:332:20)</span><br><span class="line">    at tryCatcher (C:\Users\pjm-9\OneDrive\文档\blog\node_modules\bluebird\js\release\util.js:16:23)</span><br><span class="line">    at MappingPromiseArray._promiseFulfilled (C:\Users\pjm-9\OneDrive\文档\blog\node_modules\bluebird\js\release\map.js:68:38)</span><br><span class="line">    at MappingPromiseArray.PromiseArray._iterate (C:\Users\pjm-9\OneDrive\文档\blog\node_modules\bluebird\js\release\promise_array.js:115:31)</span><br><span class="line">    at MappingPromiseArray.init (C:\Users\pjm-9\OneDrive\文档\blog\node_modules\bluebird\js\release\promise_array.js:79:10)</span><br><span class="line">    at MappingPromiseArray._asyncInit (C:\Users\pjm-9\OneDrive\文档\blog\node_modules\bluebird\js\release\map.js:37:10)</span><br><span class="line">    at _drainQueueStep (C:\Users\pjm-9\OneDrive\文档\blog\node_modules\bluebird\js\release\async.js:97:12)</span><br><span class="line">    at _drainQueue (C:\Users\pjm-9\OneDrive\文档\blog\node_modules\bluebird\js\release\async.js:86:9)</span><br><span class="line">    at Async._drainQueues (C:\Users\pjm-9\OneDrive\文档\blog\node_modules\bluebird\js\release\async.js:102:5)</span><br><span class="line">    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\pjm-9\OneDrive\文档\blog\node_modules\bluebird\js\release\async.js:15:14)</span><br><span class="line">    at runCallback (timers.js:705:18)</span><br><span class="line">    at tryOnImmediate (timers.js:676:5)</span><br></pre></td></tr></table></figure>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>  npm remove hexo-baidu-url-submit<br>  hexo clean<br>  hexo g</p>
+<p>似乎是因为next自带了百度网站自动推送，删除之后就好了。如果想要打开自动推送，需要将百度的代码复制到<code>themes/next/layout/_third-party/baidu-push.swig</code></p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-10-29T15:08:30+08:00"
-              content="2019-10-29">
-          10-29
-        </time>
+    
+    
+    
+      
+        <div class="reward-container">
+  <div>请我喝杯咖啡吧.</div>
+  <button disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    Donate
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="远歌 WeChat Pay">
+        <p>WeChat Pay</p>
       </div>
 
-      <h3 class="post-title">
-          <a class="post-title-link" href="/hgposts/84b0cd74/" itemprop="url">
-            <span itemprop="name">hexo 博客 bug</span>
-          </a>
-      </h3>
-
-    </header>
-  </article>
-
-    </div>
   </div>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/hexo/" rel="tag"># hexo</a>
+              <a href="/tags/debug/" rel="tag"># debug</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/hgposts/6358f960/" rel="next" title="10. Regular Expression Matching">
+                  <i class="fa fa-chevron-left"></i> 10. Regular Expression Matching
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+            </div>
+          </div>
+      </footer>
+    
+  </article>
   
   
   
 
-  
-
+  </div>
 
 
           </div>
@@ -268,6 +339,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#百度网站推送"><span class="nav-number">1.</span> <span class="nav-text">百度网站推送</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#报错"><span class="nav-number">1.1.</span> <span class="nav-text">报错</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方案"><span class="nav-number">1.2.</span> <span class="nav-text">解决方案</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
