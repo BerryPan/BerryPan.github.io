@@ -52,18 +52,18 @@
   };
 </script>
 
-  <meta name="description" content="建站中遇到的bug和解决方案">
-<meta name="keywords" content="hexo,debug">
+  <meta name="description" content="ProblemImplement atoi which converts a string to an integer. The function first discards as many whitespace characters as necessary until the first non-whitespace character is found. Then, starting fr">
+<meta name="keywords" content="String,Math">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo 博客 bug">
-<meta property="og:url" content="https:&#x2F;&#x2F;yuange.me&#x2F;hgposts&#x2F;84b0cd74&#x2F;index.html">
+<meta property="og:title" content="8. String to Integer (atoi)">
+<meta property="og:url" content="https:&#x2F;&#x2F;yuange.me&#x2F;posts&#x2F;11a89618&#x2F;index.html">
 <meta property="og:site_name" content="远歌">
-<meta property="og:description" content="建站中遇到的bug和解决方案">
+<meta property="og:description" content="ProblemImplement atoi which converts a string to an integer. The function first discards as many whitespace characters as necessary until the first non-whitespace character is found. Then, starting fr">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-29T10:40:49.733Z">
+<meta property="og:updated_time" content="2019-10-29T10:40:49.738Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://yuange.me/hgposts/84b0cd74/">
+<link rel="canonical" href="https://yuange.me/posts/11a89618/">
 
 
 <script id="page-configurations">
@@ -77,7 +77,7 @@
   };
 </script>
 
-  <title>hexo 博客 bug | 远歌</title>
+  <title>8. String to Integer (atoi) | 远歌</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150738391-1"></script>
     <script>
@@ -205,7 +205,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
-    <link itemprop="mainEntityOfPage" href="https://yuange.me/hgposts/84b0cd74/">
+    <link itemprop="mainEntityOfPage" href="https://yuange.me/posts/11a89618/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/23097417?s=400&u=a3848d773a837079031fb241c8586a3fc652e179&v=4">
@@ -218,7 +218,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          hexo 博客 bug
+          8. String to Integer (atoi)
         </h2>
 
         <div class="post-meta">
@@ -227,18 +227,24 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2019-10-29 15:08:30 / Modified: 18:40:49" itemprop="dateCreated datePublished" datetime="2019-10-29T15:08:30+08:00">2019-10-29</time>
+              <time title="Created: 2019-10-28 19:52:02" itemprop="dateCreated datePublished" datetime="2019-10-28T19:52:02+08:00">2019-10-28</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-10-29 18:40:49" itemprop="dateModified" datetime="2019-10-29T18:40:49+08:00">2019-10-29</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
+                  <a href="/categories/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
                   </a>
                 </span>
             </span>
@@ -252,8 +258,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/hgposts/84b0cd74/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="hgposts/84b0cd74/" itemprop="commentCount"></span>
+    <a title="disqus" href="/posts/11a89618/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/11a89618/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -268,13 +274,40 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>建站中遇到的bug和解决方案</p>
+        <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>Implement <code>atoi</code> which converts a string to an integer.</p>
+<p>The function first discards as many whitespace characters as necessary until the first non-whitespace character is found. Then, starting from this character, takes an optional initial plus or minus sign followed by as many numerical digits as possible, and interprets them as a numerical value.</p>
+<p>The string can contain additional characters after those that form the integral number, which are ignored and have no effect on the behavior of this function.</p>
+<p>If the first sequence of non-whitespace characters in str is not a valid integral number, or if no such sequence exists because either str is empty or it contains only whitespace characters, no conversion is performed.</p>
+<p>If no valid conversion could be performed, a zero value is returned.</p>
 <a id="more"></a>
 
-<h2 id="百度网站推送"><a href="#百度网站推送" class="headerlink" title="百度网站推送"></a>百度网站推送</h2><h3 id="报错"><a href="#报错" class="headerlink" title="报错"></a>报错</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">INFO  Start processing</span><br><span class="line">FATAL Something&apos;s wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.html</span><br><span class="line">TypeError: Cannot read property &apos;count&apos; of undefined</span><br><span class="line">    at Hexo.module.exports (C:\Users\pjm-9\OneDrive\文档\blog\node_modules\hexo-baidu-url-submit\lib\generator.js:4:41)</span><br><span class="line">    at Hexo.&lt;anonymous&gt; (C:\Users\pjm-9\OneDrive\文档\blog\node_modules\bluebird\js\release\method.js:15:34)</span><br><span class="line">    at Promise.map.key (C:\Users\pjm-9\OneDrive\文档\blog\node_modules\hexo\lib\hexo\index.js:332:20)</span><br><span class="line">    at tryCatcher (C:\Users\pjm-9\OneDrive\文档\blog\node_modules\bluebird\js\release\util.js:16:23)</span><br><span class="line">    at MappingPromiseArray._promiseFulfilled (C:\Users\pjm-9\OneDrive\文档\blog\node_modules\bluebird\js\release\map.js:68:38)</span><br><span class="line">    at MappingPromiseArray.PromiseArray._iterate (C:\Users\pjm-9\OneDrive\文档\blog\node_modules\bluebird\js\release\promise_array.js:115:31)</span><br><span class="line">    at MappingPromiseArray.init (C:\Users\pjm-9\OneDrive\文档\blog\node_modules\bluebird\js\release\promise_array.js:79:10)</span><br><span class="line">    at MappingPromiseArray._asyncInit (C:\Users\pjm-9\OneDrive\文档\blog\node_modules\bluebird\js\release\map.js:37:10)</span><br><span class="line">    at _drainQueueStep (C:\Users\pjm-9\OneDrive\文档\blog\node_modules\bluebird\js\release\async.js:97:12)</span><br><span class="line">    at _drainQueue (C:\Users\pjm-9\OneDrive\文档\blog\node_modules\bluebird\js\release\async.js:86:9)</span><br><span class="line">    at Async._drainQueues (C:\Users\pjm-9\OneDrive\文档\blog\node_modules\bluebird\js\release\async.js:102:5)</span><br><span class="line">    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\pjm-9\OneDrive\文档\blog\node_modules\bluebird\js\release\async.js:15:14)</span><br><span class="line">    at runCallback (timers.js:705:18)</span><br><span class="line">    at tryOnImmediate (timers.js:676:5)</span><br></pre></td></tr></table></figure>
-<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>  npm remove hexo-baidu-url-submit<br>  hexo clean<br>  hexo g</p>
-<p>似乎是因为next自带了百度网站自动推送，删除之后就好了。如果想要打开自动推送，需要将百度的代码复制到<code>themes/next/layout/_third-party/baidu-push.swig</code></p>
-
+<p><strong>Note:</strong></p>
+<p>Only the space character ‘ ‘ is considered as whitespace character.<br>Assume we are dealing with an environment which could only store integers within the 32-bit signed integer range: $[−2^{31},  2^{31} − 1]$. If the numerical value is out of the range of representable values, INT_MAX $(2^{31} − 1)$ or INT_MIN $(−2^{31})$ is returned.</p>
+<p><strong>Example 1:</strong></p>
+<pre><code>Input: &quot;42&quot;
+Output: 42</code></pre><p><strong>Example 2:</strong></p>
+<pre><code>Input: &quot;   -42&quot;
+Output: -42
+Explanation: The first non-whitespace character is &apos;-&apos;, which is the minus sign.
+            Then take as many numerical digits as possible, which gets 42.</code></pre><p><strong>Example 3:</strong></p>
+<pre><code>Input: &quot;4193 with words&quot;
+Output: 4193
+Explanation: Conversion stops at digit &apos;3&apos; as the next character is not a numerical digit.</code></pre><p><strong>Example 4:</strong></p>
+<pre><code>Input: &quot;words and 987&quot;
+Output: 0
+Explanation: The first non-whitespace character is &apos;w&apos;, which is not a numerical 
+            digit or a +/- sign. Therefore no valid conversion could be performed.</code></pre><p><strong>Example 5:</strong></p>
+<pre><code>Input: &quot;-91283472332&quot;
+Output: -2147483648
+Explanation: The number &quot;-91283472332&quot; is out of the range of a 32-bit signed integer.
+            Thefore INT_MIN $(−2^{31})$ is returned.</code></pre><h2 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h2><p>这道题考察的内容主要是分类讨论的细节。大致分成以下几种情况：</p>
+<ol>
+<li>除了+-以外的字符在数字字符之前出现-&gt;return 0；</li>
+<li>除了+-以外的字符在数字字符之后出现-&gt;return out;</li>
+<li>正负号分开计算</li>
+<li>防止溢出</li>
+</ol>
+<h2 id="code"><a href="#code" class="headerlink" title="code"></a>code</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">myAtoi</span><span class="params">(<span class="built_in">string</span> str)</span> </span>&#123;	<span class="keyword">int</span> flag = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">char</span> symbol = <span class="literal">NULL</span>;</span><br><span class="line">        <span class="keyword">int</span> out = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; str.size(); ++i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (str[i] == <span class="string">' '</span> &amp;&amp; flag)</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> ((str[i] &lt; <span class="string">'0'</span> || str[i] &gt;<span class="string">'9'</span>) &amp;&amp; str[i] != <span class="string">'+'</span> &amp;&amp; str[i] != <span class="string">'-'</span>) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (flag)</span><br><span class="line">                        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">                    <span class="keyword">else</span></span><br><span class="line">                        <span class="keyword">return</span> out;</span><br><span class="line">                &#125;</span><br><span class="line">                flag = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">if</span> (str[i] == <span class="string">'-'</span> || str[i] == <span class="string">'+'</span>) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (symbol)</span><br><span class="line">                        <span class="keyword">return</span> out;</span><br><span class="line">                    <span class="keyword">else</span></span><br><span class="line">                        symbol = str[i];</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">if</span> (!symbol)</span><br><span class="line">                        symbol = <span class="string">'+'</span>;</span><br><span class="line">                    <span class="keyword">if</span> (symbol == <span class="string">'+'</span>) &#123;</span><br><span class="line">                        <span class="keyword">if</span> (out &gt; INT_MAX / <span class="number">10</span>) &#123;</span><br><span class="line">                            <span class="keyword">return</span> INT_MAX;</span><br><span class="line">                        &#125;</span><br><span class="line">                        <span class="keyword">else</span> &#123;</span><br><span class="line">                            <span class="keyword">if</span> (INT_MAX - out * <span class="number">10</span> &lt; str[i]-<span class="string">'0'</span>)</span><br><span class="line">                                <span class="keyword">return</span> INT_MAX;</span><br><span class="line">                        &#125;</span><br><span class="line">                        out = str[i] - <span class="string">'0'</span> + out * <span class="number">10</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">else</span> &#123;</span><br><span class="line">                        <span class="keyword">if</span> (out &lt; INT_MIN / <span class="number">10</span>) &#123;</span><br><span class="line">                            <span class="keyword">return</span> INT_MIN;</span><br><span class="line">                        &#125;</span><br><span class="line">                        <span class="keyword">else</span> &#123;</span><br><span class="line">                            <span class="keyword">if</span> (INT_MIN - out * <span class="number">10</span> &gt; -str[i]+<span class="string">'0'</span>)</span><br><span class="line">                                <span class="keyword">return</span> INT_MIN;</span><br><span class="line">                        &#125;</span><br><span class="line">                        out = -str[i] + <span class="string">'0'</span> + out * <span class="number">10</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> out;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -299,22 +332,25 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/hexo/" rel="tag"># hexo</a>
-              <a href="/tags/debug/" rel="tag"># debug</a>
+              <a href="/tags/String/" rel="tag"># String</a>
+              <a href="/tags/Math/" rel="tag"># Math</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-                <a href="/hgposts/6358f960/" rel="next" title="10. Regular Expression Matching">
-                  <i class="fa fa-chevron-left"></i> 10. Regular Expression Matching
+                <a href="/posts/36049bdb/" rel="next" title="6. ZigZag Conversion">
+                  <i class="fa fa-chevron-left"></i> 6. ZigZag Conversion
                 </a>
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
+                <a href="/posts/6358f960/" rel="prev" title="10. Regular Expression Matching">
+                  10. Regular Expression Matching <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
       </footer>
@@ -360,7 +396,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#百度网站推送"><span class="nav-number">1.</span> <span class="nav-text">百度网站推送</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#报错"><span class="nav-number">1.1.</span> <span class="nav-text">报错</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方案"><span class="nav-number">1.2.</span> <span class="nav-text">解决方案</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem"><span class="nav-number">1.</span> <span class="nav-text">Problem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Analysis"><span class="nav-number">2.</span> <span class="nav-text">Analysis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#code"><span class="nav-number">3.</span> <span class="nav-text">code</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -521,9 +557,9 @@
       DISQUS.reset({
         reload: true,
         config: {page: {
-            url: "https://yuange.me/hgposts/84b0cd74/",
-            identifier: "hgposts/84b0cd74/",
-            title: "hexo 博客 bug"
+            url: "https://yuange.me/posts/11a89618/",
+            identifier: "posts/11a89618/",
+            title: "8. String to Integer (atoi)"
           }
         }
       });

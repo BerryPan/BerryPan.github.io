@@ -52,18 +52,18 @@
   };
 </script>
 
-  <meta name="description" content="ProblemImplement atoi which converts a string to an integer. The function first discards as many whitespace characters as necessary until the first non-whitespace character is found. Then, starting fr">
-<meta name="keywords" content="String,Math">
+  <meta name="description" content="QuestionGiven a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.">
+<meta name="keywords" content="String,Dynamic Programming">
 <meta property="og:type" content="article">
-<meta property="og:title" content="8. String to Integer (atoi)">
-<meta property="og:url" content="https:&#x2F;&#x2F;yuange.me&#x2F;hgposts&#x2F;11a89618&#x2F;index.html">
+<meta property="og:title" content="5. Longest Palindromic Substring">
+<meta property="og:url" content="https:&#x2F;&#x2F;yuange.me&#x2F;posts&#x2F;2fda2b11&#x2F;index.html">
 <meta property="og:site_name" content="远歌">
-<meta property="og:description" content="ProblemImplement atoi which converts a string to an integer. The function first discards as many whitespace characters as necessary until the first non-whitespace character is found. Then, starting fr">
+<meta property="og:description" content="QuestionGiven a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-29T10:40:49.738Z">
+<meta property="og:updated_time" content="2019-10-29T10:40:49.740Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://yuange.me/hgposts/11a89618/">
+<link rel="canonical" href="https://yuange.me/posts/2fda2b11/">
 
 
 <script id="page-configurations">
@@ -77,7 +77,7 @@
   };
 </script>
 
-  <title>8. String to Integer (atoi) | 远歌</title>
+  <title>5. Longest Palindromic Substring | 远歌</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150738391-1"></script>
     <script>
@@ -205,7 +205,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
-    <link itemprop="mainEntityOfPage" href="https://yuange.me/hgposts/11a89618/">
+    <link itemprop="mainEntityOfPage" href="https://yuange.me/posts/2fda2b11/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/23097417?s=400&u=a3848d773a837079031fb241c8586a3fc652e179&v=4">
@@ -218,7 +218,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          8. String to Integer (atoi)
+          5. Longest Palindromic Substring
         </h2>
 
         <div class="post-meta">
@@ -228,7 +228,7 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2019-10-28 19:52:02" itemprop="dateCreated datePublished" datetime="2019-10-28T19:52:02+08:00">2019-10-28</time>
+              <time title="Created: 2019-10-27 14:57:38" itemprop="dateCreated datePublished" datetime="2019-10-27T14:57:38+08:00">2019-10-27</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
@@ -258,8 +258,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/hgposts/11a89618/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="hgposts/11a89618/" itemprop="commentCount"></span>
+    <a title="disqus" href="/posts/2fda2b11/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/2fda2b11/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -274,40 +274,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>Implement <code>atoi</code> which converts a string to an integer.</p>
-<p>The function first discards as many whitespace characters as necessary until the first non-whitespace character is found. Then, starting from this character, takes an optional initial plus or minus sign followed by as many numerical digits as possible, and interprets them as a numerical value.</p>
-<p>The string can contain additional characters after those that form the integral number, which are ignored and have no effect on the behavior of this function.</p>
-<p>If the first sequence of non-whitespace characters in str is not a valid integral number, or if no such sequence exists because either str is empty or it contains only whitespace characters, no conversion is performed.</p>
-<p>If no valid conversion could be performed, a zero value is returned.</p>
+        <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.</p>
 <a id="more"></a>
 
-<p><strong>Note:</strong></p>
-<p>Only the space character ‘ ‘ is considered as whitespace character.<br>Assume we are dealing with an environment which could only store integers within the 32-bit signed integer range: $[−2^{31},  2^{31} − 1]$. If the numerical value is out of the range of representable values, INT_MAX $(2^{31} − 1)$ or INT_MIN $(−2^{31})$ is returned.</p>
 <p><strong>Example 1:</strong></p>
-<pre><code>Input: &quot;42&quot;
-Output: 42</code></pre><p><strong>Example 2:</strong></p>
-<pre><code>Input: &quot;   -42&quot;
-Output: -42
-Explanation: The first non-whitespace character is &apos;-&apos;, which is the minus sign.
-            Then take as many numerical digits as possible, which gets 42.</code></pre><p><strong>Example 3:</strong></p>
-<pre><code>Input: &quot;4193 with words&quot;
-Output: 4193
-Explanation: Conversion stops at digit &apos;3&apos; as the next character is not a numerical digit.</code></pre><p><strong>Example 4:</strong></p>
-<pre><code>Input: &quot;words and 987&quot;
-Output: 0
-Explanation: The first non-whitespace character is &apos;w&apos;, which is not a numerical 
-            digit or a +/- sign. Therefore no valid conversion could be performed.</code></pre><p><strong>Example 5:</strong></p>
-<pre><code>Input: &quot;-91283472332&quot;
-Output: -2147483648
-Explanation: The number &quot;-91283472332&quot; is out of the range of a 32-bit signed integer.
-            Thefore INT_MIN $(−2^{31})$ is returned.</code></pre><h2 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h2><p>这道题考察的内容主要是分类讨论的细节。大致分成以下几种情况：</p>
-<ol>
-<li>除了+-以外的字符在数字字符之前出现-&gt;return 0；</li>
-<li>除了+-以外的字符在数字字符之后出现-&gt;return out;</li>
-<li>正负号分开计算</li>
-<li>防止溢出</li>
-</ol>
-<h2 id="code"><a href="#code" class="headerlink" title="code"></a>code</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">myAtoi</span><span class="params">(<span class="built_in">string</span> str)</span> </span>&#123;	<span class="keyword">int</span> flag = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">char</span> symbol = <span class="literal">NULL</span>;</span><br><span class="line">        <span class="keyword">int</span> out = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; str.size(); ++i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (str[i] == <span class="string">' '</span> &amp;&amp; flag)</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> ((str[i] &lt; <span class="string">'0'</span> || str[i] &gt;<span class="string">'9'</span>) &amp;&amp; str[i] != <span class="string">'+'</span> &amp;&amp; str[i] != <span class="string">'-'</span>) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (flag)</span><br><span class="line">                        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">                    <span class="keyword">else</span></span><br><span class="line">                        <span class="keyword">return</span> out;</span><br><span class="line">                &#125;</span><br><span class="line">                flag = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">if</span> (str[i] == <span class="string">'-'</span> || str[i] == <span class="string">'+'</span>) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (symbol)</span><br><span class="line">                        <span class="keyword">return</span> out;</span><br><span class="line">                    <span class="keyword">else</span></span><br><span class="line">                        symbol = str[i];</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">if</span> (!symbol)</span><br><span class="line">                        symbol = <span class="string">'+'</span>;</span><br><span class="line">                    <span class="keyword">if</span> (symbol == <span class="string">'+'</span>) &#123;</span><br><span class="line">                        <span class="keyword">if</span> (out &gt; INT_MAX / <span class="number">10</span>) &#123;</span><br><span class="line">                            <span class="keyword">return</span> INT_MAX;</span><br><span class="line">                        &#125;</span><br><span class="line">                        <span class="keyword">else</span> &#123;</span><br><span class="line">                            <span class="keyword">if</span> (INT_MAX - out * <span class="number">10</span> &lt; str[i]-<span class="string">'0'</span>)</span><br><span class="line">                                <span class="keyword">return</span> INT_MAX;</span><br><span class="line">                        &#125;</span><br><span class="line">                        out = str[i] - <span class="string">'0'</span> + out * <span class="number">10</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">else</span> &#123;</span><br><span class="line">                        <span class="keyword">if</span> (out &lt; INT_MIN / <span class="number">10</span>) &#123;</span><br><span class="line">                            <span class="keyword">return</span> INT_MIN;</span><br><span class="line">                        &#125;</span><br><span class="line">                        <span class="keyword">else</span> &#123;</span><br><span class="line">                            <span class="keyword">if</span> (INT_MIN - out * <span class="number">10</span> &gt; -str[i]+<span class="string">'0'</span>)</span><br><span class="line">                                <span class="keyword">return</span> INT_MIN;</span><br><span class="line">                        &#125;</span><br><span class="line">                        out = -str[i] + <span class="string">'0'</span> + out * <span class="number">10</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> out;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<pre><code>Input: &quot;babad&quot;
+Output: &quot;bab&quot;
+Note: &quot;aba&quot; is also a valid answer.</code></pre><p><strong>Example 2:</strong></p>
+<pre><code>Input: &quot;cbbd&quot;
+Output: &quot;bb&quot;</code></pre><h2 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h2><p>这道题是要求string中最长回文子序列，首先特殊情况s长度为1时，最长子序列一定是其本身，之后只需要遍历每一个元素，确定其所在的回文串即可。</p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        <span class="function"><span class="built_in">string</span> <span class="title">longestPalindrome</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = s.size();</span><br><span class="line">        <span class="keyword">if</span> (len &lt;= <span class="number">1</span>) </span><br><span class="line">            <span class="keyword">return</span> s;</span><br><span class="line">        <span class="keyword">int</span> lpos = <span class="number">0</span>, lm = <span class="number">0</span>; # 回文起始index和回文长度</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len - <span class="number">1</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (lm &gt;= (len - i) * <span class="number">2</span>) </span><br><span class="line">                <span class="keyword">return</span> s.substr(lpos, lm); # 当前回文串长度大于剩余长度的<span class="number">2</span>倍，即为最长回文串</span><br><span class="line">            <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span> (s[i + <span class="number">1</span>] == s[i] &amp;&amp; i++ &lt; len - <span class="number">1</span>)</span><br><span class="line">                count++; # 相同字符的长度</span><br><span class="line">            <span class="keyword">int</span> end = i;</span><br><span class="line">            <span class="keyword">int</span> first = i - count; # 回文串首部</span><br><span class="line">            <span class="keyword">while</span> (first &gt;= <span class="number">0</span> &amp;&amp; end &lt; len &amp;&amp; s[first] == s[end]) &#123;</span><br><span class="line">                first--;</span><br><span class="line">                end++; # 相同字符之外的长度</span><br><span class="line">            &#125;</span><br><span class="line">            end--;</span><br><span class="line">            first++;</span><br><span class="line">            <span class="keyword">if</span> (lm &lt; end - first + <span class="number">1</span>) &#123;</span><br><span class="line">                lpos = first;</span><br><span class="line">                lm = end - first + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> s.substr(lpos, lm);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -333,23 +309,23 @@ Explanation: The number &quot;-91283472332&quot; is out of the range of a 32-bit
       <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/String/" rel="tag"># String</a>
-              <a href="/tags/Math/" rel="tag"># Math</a>
+              <a href="/tags/Dynamic-Programming/" rel="tag"># Dynamic Programming</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-                <a href="/hgposts/36049bdb/" rel="next" title="6. ZigZag Conversion">
-                  <i class="fa fa-chevron-left"></i> 6. ZigZag Conversion
+                <a href="/posts/55c9d07b/" rel="next" title="4. Median of Two Sorted Arrays">
+                  <i class="fa fa-chevron-left"></i> 4. Median of Two Sorted Arrays
                 </a>
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-                <a href="/hgposts/6358f960/" rel="prev" title="10. Regular Expression Matching">
-                  10. Regular Expression Matching <i class="fa fa-chevron-right"></i>
+                <a href="/posts/36049bdb/" rel="prev" title="6. ZigZag Conversion">
+                  6. ZigZag Conversion <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -396,7 +372,7 @@ Explanation: The number &quot;-91283472332&quot; is out of the range of a 32-bit
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem"><span class="nav-number">1.</span> <span class="nav-text">Problem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Analysis"><span class="nav-number">2.</span> <span class="nav-text">Analysis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#code"><span class="nav-number">3.</span> <span class="nav-text">code</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Question"><span class="nav-number">1.</span> <span class="nav-text">Question</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Analysis"><span class="nav-number">2.</span> <span class="nav-text">Analysis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Code"><span class="nav-number">3.</span> <span class="nav-text">Code</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -557,9 +533,9 @@ Explanation: The number &quot;-91283472332&quot; is out of the range of a 32-bit
       DISQUS.reset({
         reload: true,
         config: {page: {
-            url: "https://yuange.me/hgposts/11a89618/",
-            identifier: "hgposts/11a89618/",
-            title: "8. String to Integer (atoi)"
+            url: "https://yuange.me/posts/2fda2b11/",
+            identifier: "posts/2fda2b11/",
+            title: "5. Longest Palindromic Substring"
           }
         }
       });
