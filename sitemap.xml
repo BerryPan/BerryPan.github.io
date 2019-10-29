@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://yuange.me/categories/index.html</loc>
+    
+    <lastmod>2019-10-29T11:42:59.507Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yuange.me/tags/index.html</loc>
+    
+    <lastmod>2019-10-29T11:42:55.489Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://yuange.me/posts/df970fd6/</loc>
     
     <lastmod>2019-10-29T11:34:50.703Z</lastmod>
@@ -54,20 +68,6 @@
     <loc>https://yuange.me/404.html</loc>
     
     <lastmod>2019-10-29T10:29:49.025Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yuange.me/categories/index.html</loc>
-    
-    <lastmod>2019-10-27T05:20:04.380Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yuange.me/tags/index.html</loc>
-    
-    <lastmod>2019-10-23T07:55:54.702Z</lastmod>
     
   </url>
   
