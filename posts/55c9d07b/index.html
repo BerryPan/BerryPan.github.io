@@ -330,6 +330,7 @@ The median is (2 + 3)/2 = 2.5</code></pre><h2 id="Analysis"><a href="#Analysis" 
 
           </div>
           
+    <div class="comments" id="gitalk-container"></div>
 
         </div>
           
@@ -498,6 +499,24 @@ The median is (2 + 3)/2 = 2.5</code></pre><h2 id="Analysis"><a href="#Analysis" 
   
 
   
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID: '3b363eb779c127dea6e7',
+      clientSecret: 'ea9977511c227acbb4de7a29b276f714bfa3dadf',
+      repo: 'https://github.com/BerryPan/Gitalk',
+      owner: 'BerryPan',
+      admin: ['BerryPan'],
+      id: 'd40cbacbce056b26d5cdaf7d94a872f1',
+        language: 'en',
+      distractionFreeMode: 'true'
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+</script>
 
 </body>
 </html>
