@@ -196,6 +196,104 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://yuange.me/posts/c225c505/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/23097417?s=400&u=a3848d773a837079031fb241c8586a3fc652e179&v=4">
+      <meta itemprop="name" content="远歌">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="远歌">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/c225c505/" class="post-title-link" itemprop="url">Unsupervised Adversarial Attacks on Deep</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2019-10-30 19:52:37 / Modified: 22:15:51" itemprop="dateCreated datePublished" datetime="2019-10-30T19:52:37+08:00">2019-10-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/paper/" itemprop="url" rel="index">
+                    <span itemprop="name">paper</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="使用GAN对基于深度特征的检索进行无监督对抗攻击"><a href="#使用GAN对基于深度特征的检索进行无监督对抗攻击" class="headerlink" title="使用GAN对基于深度特征的检索进行无监督对抗攻击"></a>使用GAN对基于深度特征的检索进行无监督对抗攻击</h1><p>本文使用无监督生成对抗网络(UAA-GAN)对图像检索系统攻击。UAA-GAN只需要很少的未标记数据来进行训练。训练后，该模型可以对查询图像产生特定的扰动，生成对抗样本。核心思想是确保扰动人眼无法察觉，同时尽量远离深度特征空间。</p>
+<p>UAA-GAN适用于各种基于深度特征的应用场景，包含图像检索，人脸识别等。实验结果表明，在查询图像的视觉特征变化不明显的情况下，UAA-GAN削弱了检索性能。UAA-GAN生成的图片很难区分，因为往往在图像的纹理和突出区域(人脸的关键部位、主要结构/边缘)添加轻微扰动，在视觉不重要的区域基本不变(背景和天空)。这表明，UAA-GAN确实学会了如何处理图像检索系统和人眼。</p>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>DNN在CBIR中应用比较广泛，渐渐取代了人工标记。基于DNN的模型通过将预训练好的DNN顶层的活动聚集起来，生成图像的深度特征描述符，然后根据特征向量的欧氏距离或余弦相似度来确定两幅图像之间的相似度(或距离)。这比基于关键点的特征保存了更多的全局语义。但是DNN的鲁棒性和稳定性的研究很少。生成对抗样本可以fool图像检索系统。<br><img src="" alt=""></p>
+<p>攻击图像检索系统比攻击图像分类模型更困难：</p>
+<ol>
+<li>FC层和softmax对关键点和区域的修改更加敏感。微小的扰动可以显著降低<code>局部</code>特征检测器卷积核的激活。对于图像检索系统来讲，它是在一个全局特征的数据库中进行搜索的。这些全局特征在CNN的多个max pooling或者sum-pooling池中搜索，对局部的扰动更加鲁棒。</li>
+<li>标签和梯度信息缺乏。</li>
+</ol>
+<p>本文提出的UAA-GAN，具有以下特性：</p>
+<ol>
+<li>生成的对抗样本距离原图像较远</li>
+<li>添加的扰动较小，肉眼无法察觉</li>
+<li>对抗样本看起来比较自然</li>
+</ol>
+<p>本文的贡献有：</p>
+<ol>
+<li>提出UAA-GAN生成人眼无法分辨的对抗样本</li>
+<li>UAA-GAN无监督，只需要比较小的样本，训练完成后，可以对每个样本添加扰动</li>
+<li>UAA-GAN评价指标：CBIR，身份鉴定，人脸搜索。实验结果表明，UAA-GAN在所有任务中都有效</li>
+</ol>
+<h2 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h2><h3 id="Adversarial-Example"><a href="#Adversarial-Example" class="headerlink" title="Adversarial Example"></a>Adversarial Example</h3><p>常用的一些针对分类模型的对抗样本方法：</p>
+<ol>
+<li>添加小心制造的、微小的扰动(Intriguing properties of neural networks)</li>
+<li>FSGM(Explaining and harnessing adversarial examples) &amp; iterative variation(Adversarial machine learning at scale)</li>
+<li>AdvGAN(Generating adversarial examples with adversarial networks)</li>
+<li>DeepFool &amp; UAP</li>
+<li>PS-GAN (Perceptualsensitive gan for generating adversarial patches)<h3 id="Deep-Feature-based-Image-Retrieval"><a href="#Deep-Feature-based-Image-Retrieval" class="headerlink" title="Deep Feature-based Image Retrieval"></a>Deep Feature-based Image Retrieval</h3>最新的基于DNN的检索方法通过从预训练或微调的CNN模型中提取的聚合深度特征来表示图像。两幅图像之间的相似度可以直接用深度特征空间中两图对应的欧氏距离或余弦相似度来衡量。<h3 id="Generative-Adversarial-Networks"><a href="#Generative-Adversarial-Networks" class="headerlink" title="Generative Adversarial Networks"></a>Generative Adversarial Networks</h3>AdvGAN和PS-GAN应用到了对抗样本中</li>
+</ol>
+<h2 id="Methodology"><a href="#Methodology" class="headerlink" title="Methodology"></a>Methodology</h2><p>UAA-GAN受GAN框架启发。也受residual learning启发，让generator学习真实图像到扰动的映射，然后用跳连接将扰动添加到真实图像上。</p>
+<h3 id="Problem-Formulation"><a href="#Problem-Formulation" class="headerlink" title="Problem Formulation"></a>Problem Formulation</h3>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="https://yuange.me/posts/d778649/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -898,20 +996,20 @@ Y   I   R</code></pre><p>And then read line by line: <code>&quot;PAHNAPLSIIGYIR&
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">9</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

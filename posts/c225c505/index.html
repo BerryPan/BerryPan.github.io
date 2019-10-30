@@ -52,18 +52,18 @@
   };
 </script>
 
-  <meta name="description" content="建站中遇到的bug和解决方案">
-<meta name="keywords" content="hexo,debug">
+  <meta name="description" content="使用GAN对基于深度特征的检索进行无监督对抗攻击本文使用无监督生成对抗网络(UAA-GAN)对图像检索系统攻击。UAA-GAN只需要很少的未标记数据来进行训练。训练后，该模型可以对查询图像产生特定的扰动，生成对抗样本。核心思想是确保扰动人眼无法察觉，同时尽量远离深度特征空间。 UAA-GAN适用于各种基于深度特征的应用场景，包含图像检索，人脸识别等。实验结果表明，在查询图像的视觉特征变化不明显的情">
+<meta name="keywords" content="adversarial example,image retrieval,GAN,unsupervised learning">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo 博客 bug">
-<meta property="og:url" content="https:&#x2F;&#x2F;yuange.me&#x2F;posts&#x2F;84b0cd74&#x2F;index.html">
+<meta property="og:title" content="Unsupervised Adversarial Attacks on Deep">
+<meta property="og:url" content="https:&#x2F;&#x2F;yuange.me&#x2F;posts&#x2F;c225c505&#x2F;index.html">
 <meta property="og:site_name" content="远歌">
-<meta property="og:description" content="建站中遇到的bug和解决方案">
+<meta property="og:description" content="使用GAN对基于深度特征的检索进行无监督对抗攻击本文使用无监督生成对抗网络(UAA-GAN)对图像检索系统攻击。UAA-GAN只需要很少的未标记数据来进行训练。训练后，该模型可以对查询图像产生特定的扰动，生成对抗样本。核心思想是确保扰动人眼无法察觉，同时尽量远离深度特征空间。 UAA-GAN适用于各种基于深度特征的应用场景，包含图像检索，人脸识别等。实验结果表明，在查询图像的视觉特征变化不明显的情">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-29T11:12:27.921Z">
+<meta property="og:updated_time" content="2019-10-30T14:15:51.730Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://yuange.me/posts/84b0cd74/">
+<link rel="canonical" href="https://yuange.me/posts/c225c505/">
 
 
 <script id="page-configurations">
@@ -77,7 +77,7 @@
   };
 </script>
 
-  <title>hexo 博客 bug | 远歌</title>
+  <title>Unsupervised Adversarial Attacks on Deep | 远歌</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150738391-1"></script>
     <script>
@@ -200,7 +200,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
-    <link itemprop="mainEntityOfPage" href="https://yuange.me/posts/84b0cd74/">
+    <link itemprop="mainEntityOfPage" href="https://yuange.me/posts/c225c505/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/23097417?s=400&u=a3848d773a837079031fb241c8586a3fc652e179&v=4">
@@ -213,7 +213,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          hexo 博客 bug
+          Unsupervised Adversarial Attacks on Deep
         </h2>
 
         <div class="post-meta">
@@ -224,7 +224,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2019-10-29 15:08:30 / Modified: 19:12:27" itemprop="dateCreated datePublished" datetime="2019-10-29T15:08:30+08:00">2019-10-29</time>
+              <time title="Created: 2019-10-30 19:52:37 / Modified: 22:15:51" itemprop="dateCreated datePublished" datetime="2019-10-30T19:52:37+08:00">2019-10-30</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -232,8 +232,8 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
+                  <a href="/categories/paper/" itemprop="url" rel="index">
+                    <span itemprop="name">paper</span>
                   </a>
                 </span>
             </span>
@@ -249,13 +249,36 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>建站中遇到的bug和解决方案</p>
-<a id="more"></a>
-
-<h2 id="百度网站推送"><a href="#百度网站推送" class="headerlink" title="百度网站推送"></a>百度网站推送</h2><h3 id="报错"><a href="#报错" class="headerlink" title="报错"></a>报错</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">INFO  Start processing</span><br><span class="line">FATAL Something&apos;s wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.html</span><br><span class="line">TypeError: Cannot read property &apos;count&apos; of undefined</span><br><span class="line">    at Hexo.module.exports (C:\Users\pjm-9\OneDrive\文档\blog\node_modules\hexo-baidu-url-submit\lib\generator.js:4:41)</span><br><span class="line">    at Hexo.&lt;anonymous&gt; (C:\Users\pjm-9\OneDrive\文档\blog\node_modules\bluebird\js\release\method.js:15:34)</span><br><span class="line">    at Promise.map.key (C:\Users\pjm-9\OneDrive\文档\blog\node_modules\hexo\lib\hexo\index.js:332:20)</span><br><span class="line">    at tryCatcher (C:\Users\pjm-9\OneDrive\文档\blog\node_modules\bluebird\js\release\util.js:16:23)</span><br><span class="line">    at MappingPromiseArray._promiseFulfilled (C:\Users\pjm-9\OneDrive\文档\blog\node_modules\bluebird\js\release\map.js:68:38)</span><br><span class="line">    at MappingPromiseArray.PromiseArray._iterate (C:\Users\pjm-9\OneDrive\文档\blog\node_modules\bluebird\js\release\promise_array.js:115:31)</span><br><span class="line">    at MappingPromiseArray.init (C:\Users\pjm-9\OneDrive\文档\blog\node_modules\bluebird\js\release\promise_array.js:79:10)</span><br><span class="line">    at MappingPromiseArray._asyncInit (C:\Users\pjm-9\OneDrive\文档\blog\node_modules\bluebird\js\release\map.js:37:10)</span><br><span class="line">    at _drainQueueStep (C:\Users\pjm-9\OneDrive\文档\blog\node_modules\bluebird\js\release\async.js:97:12)</span><br><span class="line">    at _drainQueue (C:\Users\pjm-9\OneDrive\文档\blog\node_modules\bluebird\js\release\async.js:86:9)</span><br><span class="line">    at Async._drainQueues (C:\Users\pjm-9\OneDrive\文档\blog\node_modules\bluebird\js\release\async.js:102:5)</span><br><span class="line">    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\pjm-9\OneDrive\文档\blog\node_modules\bluebird\js\release\async.js:15:14)</span><br><span class="line">    at runCallback (timers.js:705:18)</span><br><span class="line">    at tryOnImmediate (timers.js:676:5)</span><br></pre></td></tr></table></figure>
-<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm remove hexo-baidu-url-submit</span><br><span class="line">hexo clean</span><br><span class="line">hexo g</span><br></pre></td></tr></table></figure>
-<p>似乎是因为next自带了百度网站自动推送，删除之后就好了。如果想要打开自动推送，需要将百度的代码复制到<code>themes/next/layout/_third-party/baidu-push.swig</code></p>
-
+        <h1 id="使用GAN对基于深度特征的检索进行无监督对抗攻击"><a href="#使用GAN对基于深度特征的检索进行无监督对抗攻击" class="headerlink" title="使用GAN对基于深度特征的检索进行无监督对抗攻击"></a>使用GAN对基于深度特征的检索进行无监督对抗攻击</h1><p>本文使用无监督生成对抗网络(UAA-GAN)对图像检索系统攻击。UAA-GAN只需要很少的未标记数据来进行训练。训练后，该模型可以对查询图像产生特定的扰动，生成对抗样本。核心思想是确保扰动人眼无法察觉，同时尽量远离深度特征空间。</p>
+<p>UAA-GAN适用于各种基于深度特征的应用场景，包含图像检索，人脸识别等。实验结果表明，在查询图像的视觉特征变化不明显的情况下，UAA-GAN削弱了检索性能。UAA-GAN生成的图片很难区分，因为往往在图像的纹理和突出区域(人脸的关键部位、主要结构/边缘)添加轻微扰动，在视觉不重要的区域基本不变(背景和天空)。这表明，UAA-GAN确实学会了如何处理图像检索系统和人眼。</p>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>DNN在CBIR中应用比较广泛，渐渐取代了人工标记。基于DNN的模型通过将预训练好的DNN顶层的活动聚集起来，生成图像的深度特征描述符，然后根据特征向量的欧氏距离或余弦相似度来确定两幅图像之间的相似度(或距离)。这比基于关键点的特征保存了更多的全局语义。但是DNN的鲁棒性和稳定性的研究很少。生成对抗样本可以fool图像检索系统。<br><img src="" alt=""></p>
+<p>攻击图像检索系统比攻击图像分类模型更困难：</p>
+<ol>
+<li>FC层和softmax对关键点和区域的修改更加敏感。微小的扰动可以显著降低<code>局部</code>特征检测器卷积核的激活。对于图像检索系统来讲，它是在一个全局特征的数据库中进行搜索的。这些全局特征在CNN的多个max pooling或者sum-pooling池中搜索，对局部的扰动更加鲁棒。</li>
+<li>标签和梯度信息缺乏。</li>
+</ol>
+<p>本文提出的UAA-GAN，具有以下特性：</p>
+<ol>
+<li>生成的对抗样本距离原图像较远</li>
+<li>添加的扰动较小，肉眼无法察觉</li>
+<li>对抗样本看起来比较自然</li>
+</ol>
+<p>本文的贡献有：</p>
+<ol>
+<li>提出UAA-GAN生成人眼无法分辨的对抗样本</li>
+<li>UAA-GAN无监督，只需要比较小的样本，训练完成后，可以对每个样本添加扰动</li>
+<li>UAA-GAN评价指标：CBIR，身份鉴定，人脸搜索。实验结果表明，UAA-GAN在所有任务中都有效</li>
+</ol>
+<h2 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h2><h3 id="Adversarial-Example"><a href="#Adversarial-Example" class="headerlink" title="Adversarial Example"></a>Adversarial Example</h3><p>常用的一些针对分类模型的对抗样本方法：</p>
+<ol>
+<li>添加小心制造的、微小的扰动(Intriguing properties of neural networks)</li>
+<li>FSGM(Explaining and harnessing adversarial examples) &amp; iterative variation(Adversarial machine learning at scale)</li>
+<li>AdvGAN(Generating adversarial examples with adversarial networks)</li>
+<li>DeepFool &amp; UAP</li>
+<li>PS-GAN (Perceptualsensitive gan for generating adversarial patches)<h3 id="Deep-Feature-based-Image-Retrieval"><a href="#Deep-Feature-based-Image-Retrieval" class="headerlink" title="Deep Feature-based Image Retrieval"></a>Deep Feature-based Image Retrieval</h3>最新的基于DNN的检索方法通过从预训练或微调的CNN模型中提取的聚合深度特征来表示图像。两幅图像之间的相似度可以直接用深度特征空间中两图对应的欧氏距离或余弦相似度来衡量。<h3 id="Generative-Adversarial-Networks"><a href="#Generative-Adversarial-Networks" class="headerlink" title="Generative Adversarial Networks"></a>Generative Adversarial Networks</h3>AdvGAN和PS-GAN应用到了对抗样本中</li>
+</ol>
+<h2 id="Methodology"><a href="#Methodology" class="headerlink" title="Methodology"></a>Methodology</h2><p>UAA-GAN受GAN框架启发。也受residual learning启发，让generator学习真实图像到扰动的映射，然后用跳连接将扰动添加到真实图像上。</p>
+<h3 id="Problem-Formulation"><a href="#Problem-Formulation" class="headerlink" title="Problem Formulation"></a>Problem Formulation</h3>
     </div>
 
     
@@ -280,25 +303,24 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/hexo/" rel="tag"># hexo</a>
-              <a href="/tags/debug/" rel="tag"># debug</a>
+              <a href="/tags/adversarial-example/" rel="tag"># adversarial example</a>
+              <a href="/tags/image-retrieval/" rel="tag"># image retrieval</a>
+              <a href="/tags/GAN/" rel="tag"># GAN</a>
+              <a href="/tags/unsupervised-learning/" rel="tag"># unsupervised learning</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-                <a href="/posts/6358f960/" rel="next" title="10. Regular Expression Matching">
-                  <i class="fa fa-chevron-left"></i> 10. Regular Expression Matching
+                <a href="/posts/d778649/" rel="next" title="11. Container With Most Water">
+                  <i class="fa fa-chevron-left"></i> 11. Container With Most Water
                 </a>
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-                <a href="/posts/df970fd6/" rel="prev" title="为主题设置gitalk评论区">
-                  为主题设置gitalk评论区 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
       </footer>
@@ -338,7 +360,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#百度网站推送"><span class="nav-number">1.</span> <span class="nav-text">百度网站推送</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#报错"><span class="nav-number">1.1.</span> <span class="nav-text">报错</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方案"><span class="nav-number">1.2.</span> <span class="nav-text">解决方案</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#使用GAN对基于深度特征的检索进行无监督对抗攻击"><span class="nav-number">1.</span> <span class="nav-text">使用GAN对基于深度特征的检索进行无监督对抗攻击</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction"><span class="nav-number">1.1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Related-Work"><span class="nav-number">1.2.</span> <span class="nav-text">Related Work</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Adversarial-Example"><span class="nav-number">1.2.1.</span> <span class="nav-text">Adversarial Example</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deep-Feature-based-Image-Retrieval"><span class="nav-number">1.2.2.</span> <span class="nav-text">Deep Feature-based Image Retrieval</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generative-Adversarial-Networks"><span class="nav-number">1.2.3.</span> <span class="nav-text">Generative Adversarial Networks</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Methodology"><span class="nav-number">1.3.</span> <span class="nav-text">Methodology</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem-Formulation"><span class="nav-number">1.3.1.</span> <span class="nav-text">Problem Formulation</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -493,7 +515,7 @@
       repo: 'Gitalk',
       owner: 'BerryPan',
       admin: ['BerryPan'],
-      id: '6c1adddd465396f28968e184a75a0221',
+      id: '1e1081c388b6e23d4a1fd134b23e0732',
         language: '',
       distractionFreeMode: 'true'
     });
