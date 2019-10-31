@@ -55,13 +55,13 @@
   <meta name="description" content="使用GAN对基于深度特征的检索进行无监督对抗攻击本文使用无监督生成对抗网络(UAA-GAN)对图像检索系统攻击。UAA-GAN只需要很少的未标记数据来进行训练。训练后，该模型可以对查询图像产生特定的扰动，生成对抗样本。核心思想是确保扰动人眼无法察觉，同时尽量远离深度特征空间。 UAA-GAN适用于各种基于深度特征的应用场景，包含图像检索，人脸识别等。实验结果表明，在查询图像的视觉特征变化不明显的情">
 <meta name="keywords" content="adversarial example,image retrieval,GAN,unsupervised learning">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Unsupervised Adversarial Attacks on Deep">
+<meta property="og:title" content="Unsupervised Adversarial Attacks on Deep Feature-based Retrieval with GAN">
 <meta property="og:url" content="https:&#x2F;&#x2F;yuange.me&#x2F;posts&#x2F;c225c505&#x2F;index.html">
 <meta property="og:site_name" content="远歌">
 <meta property="og:description" content="使用GAN对基于深度特征的检索进行无监督对抗攻击本文使用无监督生成对抗网络(UAA-GAN)对图像检索系统攻击。UAA-GAN只需要很少的未标记数据来进行训练。训练后，该模型可以对查询图像产生特定的扰动，生成对抗样本。核心思想是确保扰动人眼无法察觉，同时尽量远离深度特征空间。 UAA-GAN适用于各种基于深度特征的应用场景，包含图像检索，人脸识别等。实验结果表明，在查询图像的视觉特征变化不明显的情">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https:&#x2F;&#x2F;yuange-me.oss-cn-shanghai.aliyuncs.com&#x2F;img&#x2F;20191031115350.jpg">
-<meta property="og:updated_time" content="2019-10-31T03:55:11.089Z">
+<meta property="og:updated_time" content="2019-10-31T07:45:54.474Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;yuange-me.oss-cn-shanghai.aliyuncs.com&#x2F;img&#x2F;20191031115350.jpg">
 
@@ -79,7 +79,7 @@
   };
 </script>
 
-  <title>Unsupervised Adversarial Attacks on Deep | 远歌</title>
+  <title>Unsupervised Adversarial Attacks on Deep Feature-based Retrieval with GAN | 远歌</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150738391-1"></script>
     <script>
@@ -215,7 +215,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          Unsupervised Adversarial Attacks on Deep
+          Unsupervised Adversarial Attacks on Deep Feature-based Retrieval with GAN
         </h2>
 
         <div class="post-meta">
@@ -232,7 +232,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-10-31 11:55:11" itemprop="dateModified" datetime="2019-10-31T11:55:11+08:00">2019-10-31</time>
+                <time title="Modified: 2019-10-31 15:45:54" itemprop="dateModified" datetime="2019-10-31T15:45:54+08:00">2019-10-31</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -285,8 +285,10 @@
 <li>FSGM(Explaining and harnessing adversarial examples) &amp; iterative variation(Adversarial machine learning at scale)</li>
 <li>AdvGAN(Generating adversarial examples with adversarial networks)</li>
 <li>DeepFool &amp; UAP</li>
-<li>PS-GAN (Perceptualsensitive gan for generating adversarial patches)<h3 id="Deep-Feature-based-Image-Retrieval"><a href="#Deep-Feature-based-Image-Retrieval" class="headerlink" title="Deep Feature-based Image Retrieval"></a>Deep Feature-based Image Retrieval</h3>最新的基于DNN的检索方法通过从预训练或微调的CNN模型中提取的聚合深度特征来表示图像。两幅图像之间的相似度可以直接用深度特征空间中两图对应的欧氏距离或余弦相似度来衡量。<h3 id="Generative-Adversarial-Networks"><a href="#Generative-Adversarial-Networks" class="headerlink" title="Generative Adversarial Networks"></a>Generative Adversarial Networks</h3>AdvGAN和PS-GAN应用到了对抗样本中</li>
+<li>PS-GAN (Perceptualsensitive gan for generating adversarial patches)</li>
+<li><h3 id="Deep-Feature-based-Image-Retrieval"><a href="#Deep-Feature-based-Image-Retrieval" class="headerlink" title="Deep Feature-based Image Retrieval"></a>Deep Feature-based Image Retrieval</h3>最新的基于DNN的检索方法通过从预训练或微调的CNN模型中提取的聚合深度特征来表示图像。两幅图像之间的相似度可以直接用深度特征空间中两图对应的欧氏距离或余弦相似度来衡量。</li>
 </ol>
+<h3 id="Generative-Adversarial-Networks"><a href="#Generative-Adversarial-Networks" class="headerlink" title="Generative Adversarial Networks"></a>Generative Adversarial Networks</h3><p>AdvGAN和PS-GAN应用到了对抗样本中</p>
 <h2 id="Methodology"><a href="#Methodology" class="headerlink" title="Methodology"></a>Methodology</h2><p>UAA-GAN受GAN框架启发。也受residual learning启发，让generator学习真实图像到扰动的映射，然后用跳连接将扰动添加到真实图像上。</p>
 <h3 id="Problem-Formulation"><a href="#Problem-Formulation" class="headerlink" title="Problem Formulation"></a>Problem Formulation</h3>
     </div>
