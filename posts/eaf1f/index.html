@@ -52,18 +52,18 @@
   };
 </script>
 
-  <meta name="description" content="next主题集成了Gitalk评论，所以不需要安装额外的包即可使用。优点是可以获得评论人的github，方便交流">
-<meta name="keywords" content="Gitalk,Github">
+  <meta name="description" content="常用的SSH工具如putty、xshell、termius等软件可以比较方便的进行命令行操作，但是不能很好地编辑文件（在输入命令行时不能看到文件的内容、文件路径名不够清晰等）这时候可以采用vscode以及微软官方提供的remote插件。">
+<meta name="keywords" content="tools,remote">
 <meta property="og:type" content="article">
-<meta property="og:title" content="为主题设置gitalk评论区">
-<meta property="og:url" content="https:&#x2F;&#x2F;yuange.me&#x2F;posts&#x2F;df970fd6&#x2F;index.html">
+<meta property="og:title" content="vscode + remote -SSH实现远程连接服务器">
+<meta property="og:url" content="https:&#x2F;&#x2F;yuange.me&#x2F;posts&#x2F;eaf1f&#x2F;index.html">
 <meta property="og:site_name" content="远歌">
-<meta property="og:description" content="next主题集成了Gitalk评论，所以不需要安装额外的包即可使用。优点是可以获得评论人的github，方便交流">
+<meta property="og:description" content="常用的SSH工具如putty、xshell、termius等软件可以比较方便的进行命令行操作，但是不能很好地编辑文件（在输入命令行时不能看到文件的内容、文件路径名不够清晰等）这时候可以采用vscode以及微软官方提供的remote插件。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-29T11:34:50.703Z">
+<meta property="og:updated_time" content="2019-11-01T02:47:18.308Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://yuange.me/posts/df970fd6/">
+<link rel="canonical" href="https://yuange.me/posts/eaf1f/">
 
 
 <script id="page-configurations">
@@ -77,7 +77,7 @@
   };
 </script>
 
-  <title>为主题设置gitalk评论区 | 远歌</title>
+  <title>vscode + remote -SSH实现远程连接服务器 | 远歌</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150738391-1"></script>
     <script>
@@ -200,7 +200,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
-    <link itemprop="mainEntityOfPage" href="https://yuange.me/posts/df970fd6/">
+    <link itemprop="mainEntityOfPage" href="https://yuange.me/posts/eaf1f/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/23097417?s=400&u=a3848d773a837079031fb241c8586a3fc652e179&v=4">
@@ -213,7 +213,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          为主题设置gitalk评论区
+          vscode + remote -SSH实现远程连接服务器
         </h2>
 
         <div class="post-meta">
@@ -224,7 +224,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2019-10-29 19:22:39 / Modified: 19:34:50" itemprop="dateCreated datePublished" datetime="2019-10-29T19:22:39+08:00">2019-10-29</time>
+              <time title="Created: 2019-11-01 10:07:35 / Modified: 10:47:18" itemprop="dateCreated datePublished" datetime="2019-11-01T10:07:35+08:00">2019-11-01</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -232,8 +232,8 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
+                  <a href="/categories/vscode/" itemprop="url" rel="index">
+                    <span itemprop="name">vscode</span>
                   </a>
                 </span>
             </span>
@@ -249,18 +249,25 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>next主题集成了Gitalk评论，所以不需要安装额外的包即可使用。优点是可以获得评论人的github，方便交流</p>
+        <p>常用的SSH工具如putty、xshell、termius等软件可以比较方便的进行命令行操作，但是不能很好地编辑文件（在输入命令行时不能看到文件的内容、文件路径名不够清晰等）这时候可以采用vscode以及微软官方提供的remote插件。</p>
 <a id="more"></a>
-
-<p>过程如下：</p>
-<ol>
-<li>注册<a href="https://github.com/settings/applications/new" target="_blank" rel="noopener">Github OAuth Application</a>。Application name随意填，<code>Homepage URL</code>和<code>Authorization callback URL</code>填网站链接或者github page链接，新建完成后保存<code>client_id</code>和<code>client_secret</code></li>
-<li>在Github上新建一个<a href="https://github.com/new" target="_blank" rel="noopener">repository</a></li>
-<li>在next主题的<code>_config.yml</code>文件中修改以下内容<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Gitalk</span></span><br><span class="line"><span class="comment"># Demo: https://gitalk.github.io</span></span><br><span class="line"><span class="attr">gitalk:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  github_id:</span> <span class="string">github用户名</span> <span class="comment"># Github repo owner</span></span><br><span class="line"><span class="attr">  repo:</span>  <span class="string">新建的repository名</span> <span class="comment"># Repository name to store issues</span></span><br><span class="line"><span class="attr">  client_id:</span> <span class="string">第一步保存的id</span> <span class="comment"># Github Application Client ID</span></span><br><span class="line"><span class="attr">  client_secret:</span> <span class="string">第一步保存的secret</span> <span class="comment"># Github Application Client Secret</span></span><br><span class="line"><span class="attr">  admin_user:</span> <span class="string">github用户名</span> <span class="comment"># GitHub repo owner and collaborators, only these guys can initialize github issues</span></span><br><span class="line"><span class="attr">  distraction_free_mode:</span> <span class="literal">true</span> <span class="comment"># Facebook-like distraction free mode</span></span><br><span class="line">  <span class="comment"># Gitalk's display language depends on user's browser or system environment</span></span><br><span class="line">  <span class="comment"># If you want everyone visiting your site to see a uniform language, you can set a force language value</span></span><br><span class="line">  <span class="comment"># Available value: en, es-ES, fr, ru, zh-CN, zh-TW</span></span><br><span class="line"><span class="attr">  language:</span> <span class="string">en或zh-CN</span> <span class="comment"># 设置会使所有访问的人使用同一种语言，而不是取决于访问人的系统和浏览器语言</span></span><br></pre></td></tr></table></figure>
-
-
-</li>
+<h2 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h2><h3 id="安装OpenSSH"><a href="#安装OpenSSH" class="headerlink" title="安装OpenSSH"></a>安装OpenSSH</h3><ol>
+<li>以管理员身份启动 PowerShell</li>
+<li>确保可以安装OpenSSH<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Get-WindowsCapability -Online | ? Name <span class="nomarkup">-like</span> <span class="string">'OpenSSH*'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># This should return the following output:</span></span><br><span class="line"></span><br><span class="line">Name  : OpenSSH.Client~~~~<span class="number">0.0</span>.<span class="number">1.0</span></span><br><span class="line">State : NotPresent</span><br><span class="line">Name  : OpenSSH.Server~~~~<span class="number">0.0</span>.<span class="number">1.0</span></span><br><span class="line">State : NotPresent</span><br></pre></td></tr></table></figure></li>
+<li>安装OpenSSH client<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Install the OpenSSH Client</span></span><br><span class="line">Add-WindowsCapability -Online -Name OpenSSH.Client~~~~<span class="number">0.0</span>.<span class="number">1.0</span></span><br></pre></td></tr></table></figure>
+<h3 id="安装Remote-SSH插件"><a href="#安装Remote-SSH插件" class="headerlink" title="安装Remote -SSH插件"></a>安装Remote -SSH插件</h3>点击vscode左侧的extension，输入”remote -SSH”，安装<code>Remote - SSH</code>和<code>Remote - SSH: Editing Configuration Files</code>即可</li>
 </ol>
+<h2 id="设置host"><a href="#设置host" class="headerlink" title="设置host"></a>设置host</h2><ol>
+<li>按F1键并执行<code>remote-ssh: add new ssh host</code></li>
+<li>输入ssh命令添加host，命令格式为<code>ssh 用户名@服务器ip或域名 -A</code></li>
+<li>输入密码</li>
+<li>连接之后就可以打开文件夹进行使用了</li>
+</ol>
+<h2 id="杂项"><a href="#杂项" class="headerlink" title="杂项"></a>杂项</h2><ol>
+<li>左下角会有图标，点击也可以直接连接</li>
+<li>设置服务器的信息和插件的属性可以按F1键，执行<code>remote-ssh: open configuration file</code>, <a href="https://linux.die.net/man/5/ssh_config" target="_blank" rel="noopener">参数表</a></li>
+</ol>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://code.visualstudio.com/docs/remote/ssh" target="_blank" rel="noopener">https://code.visualstudio.com/docs/remote/ssh</a></p>
 
     </div>
 
@@ -286,25 +293,22 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Gitalk/" rel="tag"># Gitalk</a>
-              <a href="/tags/Github/" rel="tag"># Github</a>
+              <a href="/tags/tools/" rel="tag"># tools</a>
+              <a href="/tags/remote/" rel="tag"># remote</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-                <a href="/posts/84b0cd74/" rel="next" title="hexo 博客 bug">
-                  <i class="fa fa-chevron-left"></i> hexo 博客 bug
+                <a href="/posts/c225c505/" rel="next" title="Unsupervised Adversarial Attacks on Deep Feature-based Retrieval with GAN">
+                  <i class="fa fa-chevron-left"></i> Unsupervised Adversarial Attacks on Deep Feature-based Retrieval with GAN
                 </a>
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-                <a href="/posts/d778649/" rel="prev" title="11. Container With Most Water">
-                  11. Container With Most Water <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
       </footer>
@@ -344,6 +348,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装步骤"><span class="nav-number">1.</span> <span class="nav-text">安装步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装OpenSSH"><span class="nav-number">1.1.</span> <span class="nav-text">安装OpenSSH</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Remote-SSH插件"><span class="nav-number">1.2.</span> <span class="nav-text">安装Remote -SSH插件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置host"><span class="nav-number">2.</span> <span class="nav-text">设置host</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#杂项"><span class="nav-number">3.</span> <span class="nav-text">杂项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考链接"><span class="nav-number">4.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -498,7 +503,7 @@
       repo: 'Gitalk',
       owner: 'BerryPan',
       admin: ['BerryPan'],
-      id: 'dd6634c8b1315d01c1a910312ff9a560',
+      id: '598f685f2a83613b66c73cc449c4afd3',
         language: '',
       distractionFreeMode: 'true'
     });
