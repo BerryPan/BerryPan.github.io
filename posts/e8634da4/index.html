@@ -60,7 +60,7 @@
 <meta property="og:site_name" content="远歌">
 <meta property="og:description" content="next主题更新方法">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-08T09:01:26.053Z">
+<meta property="og:updated_time" content="2019-11-08T09:07:24.782Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://jmpan.site/posts/e8634da4/">
@@ -218,7 +218,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2019-11-08 16:53:02 / Modified: 17:01:26" itemprop="dateCreated datePublished" datetime="2019-11-08T16:53:02+08:00">2019-11-08</time>
+              <time title="Created: 2019-11-08 16:53:02 / Modified: 17:07:24" itemprop="dateCreated datePublished" datetime="2019-11-08T16:53:02+08:00">2019-11-08</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -252,8 +252,21 @@
 </ol>
 <p>需要更新时执行以下命令</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd themes/next</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure>
-<p>然后将想要使用的选项手动复制到<code>/source/_data/next.yml</code>中即可。<br>建议访问<a href="https://theme-next.org/" target="_blank" rel="noopener">next主题官网</a>查看更新的feature或者删除的内容</p>
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://github.com/theme-next/hexo-theme-next/blob/master/docs/DATA-FILES.md" target="_blank" rel="noopener">https://github.com/theme-next/hexo-theme-next/blob/master/docs/DATA-FILES.md</a></p>
+<p>然后将想要使用的选项手动复制到<code>/source/_data/next.yml</code>中即可。<br>建议访问<a href="https://theme-next.org/" target="_blank" rel="noopener">next主题官网</a>查看更新的feature或者删除的内容。</p>
+<p>对于git时出现错误的情况，可以使用以下方法：</p>
+<ol>
+<li><p>commit</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m <span class="string">"My message"</span></span><br></pre></td></tr></table></figure></li>
+<li><p>Stash </p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git stash</span><br><span class="line">git stash pop</span><br></pre></td></tr></table></figure></li>
+<li><p>Discard the local changes</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard</span><br></pre></td></tr></table></figure>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2></li>
+<li><p><a href="https://github.com/theme-next/hexo-theme-next/blob/master/docs/DATA-FILES.md" target="_blank" rel="noopener">https://github.com/theme-next/hexo-theme-next/blob/master/docs/DATA-FILES.md</a></p>
+</li>
+<li><p><a href="https://stackoverflow.com/questions/15745045/how-do-i-resolve-git-saying-commit-your-changes-or-stash-them-before-you-can-me/15745424#15745424" target="_blank" rel="noopener">https://stackoverflow.com/questions/15745045/how-do-i-resolve-git-saying-commit-your-changes-or-stash-them-before-you-can-me/15745424#15745424</a></p>
+</li>
+</ol>
 
     </div>
 
@@ -294,6 +307,9 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
+                <a href="/posts/b9a4e327/" rel="prev" title="阿里云图床搭建">
+                  阿里云图床搭建 <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
       </footer>
@@ -349,7 +365,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -362,7 +378,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-count">23</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
