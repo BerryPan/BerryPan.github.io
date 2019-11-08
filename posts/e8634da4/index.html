@@ -52,14 +52,18 @@
   };
 </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="远歌">
-<meta property="og:url" content="https:&#x2F;&#x2F;jmpan.site&#x2F;tags&#x2F;Gitalk&#x2F;index.html">
+  <meta name="description" content="next主题更新方法">
+<meta name="keywords" content="next">
+<meta property="og:type" content="article">
+<meta property="og:title" content="next主题更新">
+<meta property="og:url" content="https:&#x2F;&#x2F;jmpan.site&#x2F;posts&#x2F;e8634da4&#x2F;index.html">
 <meta property="og:site_name" content="远歌">
+<meta property="og:description" content="next主题更新方法">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-11-08T09:01:26.053Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://jmpan.site/tags/Gitalk/">
+<link rel="canonical" href="https://jmpan.site/posts/e8634da4/">
 
 
 <script id="page-configurations">
@@ -67,13 +71,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false,
+    isPost: true,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>Tag: Gitalk | 远歌</title>
+  <title>next主题更新 | 远歌</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150738391-1"></script>
     <script>
@@ -185,54 +189,126 @@
           <div class="content">
             
 
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">Gitalk
-          <small>Tag</small>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="https://jmpan.site/posts/e8634da4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://jmpan.oss-cn-shanghai.aliyuncs.com/img/20191101164559.jpg">
+      <meta itemprop="name" content="远歌">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="远歌">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          next主题更新
         </h2>
-      </div>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2019-11-08 16:53:02 / Modified: 17:01:26" itemprop="dateCreated datePublished" datetime="2019-11-08T16:53:02+08:00">2019-11-08</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">hexo</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <h2 class="collection-header">2019</h2>
+        <p>next主题更新方法</p>
+<a id="more"></a>
+<ol>
+<li>创建<code>/source/_data/next.yml</code>文件</li>
+<li>复制<code>/_config.yml</code>和<code>/themes/next/_config.yml</code>中需要的选项到<code>/source/_data/next.yml</code>中</li>
+<li>执行<code>hexo clean &amp;&amp; hexo g -d &amp;&amp; hexo s</code></li>
+</ol>
+<p>需要更新时执行以下命令</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd themes/next</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure>
+<p>然后将想要使用的选项手动复制到<code>/source/_data/next.yml</code>中即可。<br>建议访问<a href="https://theme-next.org/" target="_blank" rel="noopener">next主题官网</a>查看更新的feature或者删除的内容</p>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://github.com/theme-next/hexo-theme-next/blob/master/docs/DATA-FILES.md" target="_blank" rel="noopener">https://github.com/theme-next/hexo-theme-next/blob/master/docs/DATA-FILES.md</a></p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-10-29T19:22:39+08:00"
-              content="2019-10-29">
-          10-29
-        </time>
+    
+    
+    
+      
+        <div class="reward-container">
+  <div>请我喝杯咖啡吧.</div>
+  <button disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    Donate
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="远歌 WeChat Pay">
+        <p>WeChat Pay</p>
       </div>
 
-      <h3 class="post-title">
-          <a class="post-title-link" href="/posts/df970fd6/" itemprop="url">
-            <span itemprop="name">为主题设置gitalk评论区</span>
-          </a>
-      </h3>
-
-    </header>
-  </article>
-
-    </div>
   </div>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/next/" rel="tag"># next</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/posts/bf04203b/" rel="next" title="hexo博客域名绑定">
+                  <i class="fa fa-chevron-left"></i> hexo博客域名绑定
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+            </div>
+          </div>
+      </footer>
+    
+  </article>
   
   
   
 
-  
-
+  </div>
 
 
           </div>
           
+    <div class="comments" id="gitalk-container"></div>
 
         </div>
           
@@ -257,6 +333,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#参考链接"><span class="nav-number">1.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -397,6 +474,23 @@
 
   
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID: '8c14cbb4405241a60f91',
+      clientSecret: 'b494b60defb165fe2e52423fd421d2ee45a91fbb',
+      repo: 'Gitalk',
+      owner: 'BerryPan',
+      admin: ['BerryPan'],
+      id: 'e765e08c9b64a419c6c93a2046b1d3b0',
+        language: '',
+      distractionFreeMode: 'true'
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+</script>
 
 </body>
 </html>
