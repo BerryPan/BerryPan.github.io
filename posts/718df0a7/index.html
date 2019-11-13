@@ -61,8 +61,10 @@
 <meta property="og:site_name" content="远歌">
 <meta property="og:description" content="在用git提交时会出现LF will be replaced by CRLF的错误，解决方案如下">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-13T08:11:50.217Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;jmpan.oss-cn-shanghai.aliyuncs.com&#x2F;img&#x2F;20191113161449.png">
+<meta property="og:updated_time" content="2019-11-13T08:15:29.799Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;jmpan.oss-cn-shanghai.aliyuncs.com&#x2F;img&#x2F;20191113161449.png">
 
 <link rel="canonical" href="https://jmpan.site/posts/718df0a7/">
 
@@ -219,7 +221,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2019-11-13 16:03:20 / Modified: 16:11:50" itemprop="dateCreated datePublished" datetime="2019-11-13T16:03:20+08:00">2019-11-13</time>
+              <time title="Created: 2019-11-13 16:03:20 / Modified: 16:15:29" itemprop="dateCreated datePublished" datetime="2019-11-13T16:03:20+08:00">2019-11-13</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -250,7 +252,7 @@
 
 <h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="直接让git自动替换"><a href="#直接让git自动替换" class="headerlink" title="直接让git自动替换"></a>直接让git自动替换</h3><p>打开命令行，输入：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config core.autocrlf true</span><br></pre></td></tr></table></figure>
-<h3 id="在IDE中设置UNIX换行方式"><a href="#在IDE中设置UNIX换行方式" class="headerlink" title="在IDE中设置UNIX换行方式"></a>在IDE中设置UNIX换行方式</h3><p>以VSCode为例，打开<code>File-&gt;Perferences-&gt;Settings</code>，搜索<code>eol</code>，将<code>The default end of line character</code>改成<code>\r\n</code>（即CRLF），再次git就没有报错啦</p>
+<h3 id="在IDE中设置UNIX换行方式"><a href="#在IDE中设置UNIX换行方式" class="headerlink" title="在IDE中设置UNIX换行方式"></a>在IDE中设置UNIX换行方式</h3><p>以VSCode为例，打开<code>File-&gt;Perferences-&gt;Settings</code>，搜索<code>eol</code>，将<code>The default end of line character</code>改成<code>\r\n</code>（即CRLF），再次git就没有报错啦。更改的位置在下图红框内。<br><img src="https://jmpan.oss-cn-shanghai.aliyuncs.com/img/20191113161449.png" alt="修改eol"></p>
 <h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://stackoverflow.com/questions/5834014/lf-will-be-replaced-by-crlf-in-git-what-is-that-and-is-it-important" target="_blank" rel="noopener">https://stackoverflow.com/questions/5834014/lf-will-be-replaced-by-crlf-in-git-what-is-that-and-is-it-important</a></p>
 
     </div>
